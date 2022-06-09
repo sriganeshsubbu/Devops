@@ -4,11 +4,13 @@ pipeline {
         stage('Build') { 
             steps {
                 // 
+                echo "Message from JenkinsFils - BUILD"
             }
         }
         stage('Test') { 
             steps {
                 // 
+                echo "Message from JenkinsFils - TEST"
             }
         }
         stage('Deploy') { 
