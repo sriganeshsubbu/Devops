@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    //  ------------------------
+    environment {
+        MY_WORKSPACE = "${env.WORKSPACE}"
+		MY_NAME = " Sriganesh Subramanian"
+    }
+    //  ------------------------------------
+    stages {
+        stage('Build') {
+            steps {
+                // withEnv(["PATH+My_WORKSPACE"])
+                echo 'Build Stage '
+                echo "Current Workspace = ${env.WORKSPACE}"
+                echo "Current Jobname = ${env.JOB_NAME}"
+                //
+                echo "Local ENV VAR  Workspace = ${env.MY_WORKSPACE}"
+                // --------------------------
+            }
+        }
+    }
+}
