@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+	//	-----------------  Begin Stages 
+    stages {
+        stage('Tryout') {
+            steps {
+                echo 'Jenkins GIT Step '
+				//	--------- Git and URL----------------------
+				echo "Git STEP "
+				git 'https://github.com/sriganeshsubbu/devops.git'
+				// git url: 'https://github.com/jfrogdev/project-examples.git'
+				//
+				// git changelog: false, poll: false, url: 'https://github.com/jfrogdev/project-examples.git', branch: 'master'
+				}
+			}
+		}
+	}
+	//	 --------------- End Stages ---------------------
+}
