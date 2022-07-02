@@ -1,0 +1,30 @@
+pipeline {
+    agent  any
+    //  ----------------------------------
+    options {
+        timestamps()
+    }
+    //  ------------------------------------
+    stages {
+        stage('Build') {
+            steps {
+                echo " *************  here we go ******************** "
+                script {
+                    try {
+						// docker stop hello
+                        // docker rm hello
+                        bat 'docker ps'
+                        //  
+                        bat 'docker run -td --name my_ubuntu -p 80:80 ubuntu'
+						//
+						bat 'docker ps'
+                    }
+                    catch (Exception ex) {
+                        echo " we got an error"
+                        echo ex.toString()
+                    }
+                }
+            }
+        }
+    }
+}
