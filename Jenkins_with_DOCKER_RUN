@@ -15,9 +15,11 @@ pipeline {
                         // docker rm hello
                         bat 'docker ps'
                         //  
-                        bat 'docker run -td --name my_ubuntu -p 80:80 ubuntu'
-						//
-						bat 'docker ps'
+                        bat 'docker run -td --name my_ubuntu  ubuntu'
+                        //  
+                        bat 'docker run -td --name my_gcr_alpine  gcr.io/kubeflow-images-public/alpine'
+			//
+			bat 'docker ps'
                     }
                     catch (Exception ex) {
                         echo " we got an error"
