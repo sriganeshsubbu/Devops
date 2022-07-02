@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    //  ------------------------------------
+	//	Explore localhost:8080/env-vars.html
+	//	----------------------------------------
+    stages {
+        stage('Build') {
+            steps {
+                //  
+                echo 'Build Stage '
+                echo "Current Workspace = ${env.WORKSPACE}"
+                echo "Current Jobname = ${env.JOB_NAME}"
+            }
+        }
+    }
+}
