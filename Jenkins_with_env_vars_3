@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+    //  ----------- Defining my own variables -------------
+    environment {
+        MY_WORKSPACE = "${env.WORKSPACE}"
+		MY_NAME = " Sriganesh Subramanian"
+    }
+	//	-------------- Show actual clock time on each of the ECHO statement --------------------
+	options {
+        timestamps()
+    }
+    //  ------------ Begin of Stages -----------------------
+    stages {
+        stage('Build') {
+            steps {
+                // withEnv(["PATH+My_WORKSPACE"])
+                echo 'Build Stage '
+                echo "Current Workspace = ${env.WORKSPACE}"
+                echo "Current Jobname = ${env.JOB_NAME}"
+                echo " **  BUILD NUMBER = ${env.BUILD_NUMBER} " 
+                echo " NODE_NAME =  ${env.NODE_NAME} "
+                echo " JOB_NAME = ${env.JOB_NAME} "
+                //
+                echo "Local ENV VAR  Workspace = ${env.MY_WORKSPACE}"
+				echo "Local ENV VAR  Workspace = ${env.MY_NAME}"
+                // --------------------------
+            }
+        }
+    }
+	//	---------- end of Stages ---------------------
+}
