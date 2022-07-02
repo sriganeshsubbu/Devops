@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+	//	-----------------  Begin Stages 
+    stages {
+        stage('Tryout') {
+            steps {
+                echo 'Jenkins DIR Step '
+				//	-------------------------------
+                // 	Make the output directory.
+				//	A Jenkins STEP always has { and } 
+				//	DIR is a Jenkins STEP
+				//
+				//	---------------------------------
+                dir("tintin") {
+                    // ------------------------------
+					//	writeFile  is a Built in Function - Groovy
+					//
+					//	file:   name of the file
+					//
+					//	text: the actual stuff we want to write.
+					//
+                    writeFile file: "usefulfile.txt", text: "This file is useful, need to archive it."
+				}
+			}
+		}
+	}
+	//	 --------------- End Stages ---------------------
+}
