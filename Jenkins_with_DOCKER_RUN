@@ -11,7 +11,7 @@ pipeline {
                 echo " *************  here we go ******************** "
                 script {
                     try {
-						// docker stop hello
+			// docker stop hello
                         // docker rm hello
                         bat 'docker ps'
                         //  
