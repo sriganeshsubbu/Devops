@@ -5,7 +5,7 @@ FROM openjdk:latest
 COPY *.txt /usr/share
 #
 RUN cd /usr/share
-RUN mkdir  ALBETA
+RUN mkdir -p /ALBETA
 #
 COPY *.txt /usr/share/ALBETA
 WORKDIR /usr/share
