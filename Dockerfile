@@ -5,3 +5,4 @@ FROM openjdk:latest
 COPY *.txt /usr/share
 # Copying myfile2.txt to the containers /tmp directory
 # COPY myfile2.txt /tmp
+ENTRYPOINT ["sh","ls -la"]
