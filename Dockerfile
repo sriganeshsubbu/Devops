@@ -4,7 +4,13 @@ FROM openjdk:latest
 # Copying myfile1.txt to the containers /usr/share directory
 COPY *.txt /usr/share
 #
-WORKDIR /usr/share
+RUN cd /usr/share
+RUN mkdir  ALBETA
+#
+COPY *.txt /usr/share/ALBETA
+WORKDIR /usr/share/ALBETA
+#
+
 # Copying myfile2.txt to the containers /tmp directory
 # COPY myfile2.txt /tmp
 #  ENTRYPOINT ["sh","ls -la"]
