@@ -2,8 +2,8 @@
 # Using the base image ubuntu: latest
 FROM openjdk:latest
 # Copying myfile1.txt to the containers /usr/share directory
-SHELL ["cd","usr/share"]
-SHELL ["mkdir","ALPHA"]
+CMD ["cd","usr/share"]
+CMD ["mkdir","ALPHA"]
 COPY *.txt /usr/share
 # --------  Create a DIR and also copy files
 COPY *.txt /usr/share/ALPHA
