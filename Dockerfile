@@ -8,7 +8,7 @@ RUN cd /usr/share
 RUN mkdir  ALBETA
 #
 COPY *.txt /usr/share/ALBETA
-WORKDIR /usr/share/ALBETA
+WORKDIR /usr/share
 #
 
 # Copying myfile2.txt to the containers /tmp directory
